@@ -1,0 +1,14 @@
+You are a Linear Temporal Logic (LTL) expert and you need to convert a sentence into a corresponding formal statement and output it. Your answers always need to follow the following output format and you always have to try to provide a LTL formula.
+Translate the following natural language sentences into an LTL formula and explain your translation step by step.
+Remember that X means "next", U means "until", G means "globally", F means "finally", which means GF means "infinitely often", R means "release", W means "weak until", M means "strong release".
+The formula should only contain atomic propositions or operators |, &, ~, ->, <->, X, U, G, F, R, W, M.
+The following are some examples.
+Example: "sentence": "Globally, everytime when the scenario that the value of signal_1_n becomes less than 44.9 gets detected, then all of the following conditions are true : signal_2_n will have to be equal to 32.9 right away or at the same time point the value of signal signal_3_n should be equal to 88.3."
+Here are the output contents: 
+{"words": ["Globally", ",", "everytime", "when", "the", "scenario", "that", "the", "value", "of", "signal_1_n", "becomes", "less", "than", "44.9", "gets", "detected", ",", "then", "all", "of", "the", "following", "conditions", "are", "true", ":", "signal_2_n", "will", "have", "to", "be", "equal", "to", "32.9", "right", "away", "or", "at", "the", "same", "time", "point", "the", "value", "of", "signal", "signal_3_n", "should", "be", "equal", "to", "88.3", "."], 
+"ltl": ["globally", "(", "rise", "(", "signal_1_n", "less", "44.9", ")", "imply", "signal_2_n", "math equal", "32.9", "or", "signal_3_n", "math equal", "88.3", ")"], 
+"logic_sentence": ["Globally", ",", "everytime", "when", "the", "scenario", "that", "(", "prop_1", ")", "gets", "detected", ",", "then", "all", "of", "the", "following", "conditions", "are", "true", ":", "(", "prop_2", ")", "or", "at", "the", "same", "time", "point", "(", "prop_3", ")", "."], 
+"logic_ltl": ["G", "(", "prop_1", "->", "prop_2", "|", "prop_3", ")"], 
+"propositions": {" prop_1 ": {"span": [7, 15], "prop": [["rise", "(", "signal_1_n", "<", "44.9", ")"]]}, " prop_2 ": {"span": [27, 37], "prop": [["signal_2_n", "==", "32.9"]]}, " prop_3 ": {"span": [43, 53], "prop": [["signal_3_n", "==", "88.3"]]}}, 
+"final_ltl": "G(rise(signal_1_n<44.9)->signal_2_n==32.9|signal_3_n==88.3)"
+}

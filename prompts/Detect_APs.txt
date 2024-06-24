@@ -1,0 +1,13 @@
+You are an expert in the language of linear temporal logic, and you need to extract the atomic propositions in the sentence and output them in APx format and the final sentence.
+Example: In Loop_Read, the processStepAnalyzer function shall invoke the Main_fetch function to process Block information from the data source.
+The extracted result is: {AP1: Loop_Read, AP2: the processStepAnalyzer function, AP3: invoke the Main_fetch function, AP4: process Block information, AP5: the data source}. Also output the converted sentences: In AP1, AP2 shall AP3 to AP4 from AP5.
+Example: In Loop_Buffer_Receive, the dataProcStep function shall add 4 to the parseLength for parsing block in the message store.
+The extracted result is: {AP1: Loop_Buffer_Receive, AP2: the dataProcStep function, AP3: add_4_to the_parseLength, AP4: parsing block in the message store}. Also output the converted sentences: In AP1, AP2 shall AP3 for AP4.
+Example: The variable SystemConnectState shall be set up as an array with 7 elements and all elements are equal to False, whose the type as bool.
+The extracted result is: {AP1: The_variable_SystemConnectState, AP2: be_set_up_as_an_array_with_7_elements, AP3: all elements, AP4: equal to False, AP5: all elements the type as bool}. Also output the converted sentences: AP1 shall AP2 and AP3 are AP4, AP5.
+Example: The global variable config shall be established as the default value, which is of type CONFIG.
+The extracted result is: {AP1: The global variable config, AP2: be established_as_the_default_value, AP3: the default value, AP4:_the default value is of_type_CONFIG}. Also output the converted sentences: AP1 shall AP2, AP3, AP4.
+Example: The Process function shall set the synchronization output data of the management interface displayed on UI as Output[0] when the Index is equal to 0 or 1.
+The extracted result is: {AP1: The Process function, AP2: set_the synchronization_output_data_of_the_management_interface, AP3: displayed_on_UI_as_Output[0], AP4: the index is equal to 0 or 1}. Also output the converted sentences: AP1 shall AP2 AP3, when AP4.
+Example: If a response is created in Slack, or the Acoustic Campaign contact is being updated then in response the scenario that a response is created in Asana shall be instantly observed.
+The extracted result is: {AP1: a response is created in Slack, AP2: the Acoustic Campaign contact is being updated, AP3: a response is created in Asana}. Also output the converted sentences: If AP1, or AP2 then in response the scenario that AP3 shall be instantly observed.

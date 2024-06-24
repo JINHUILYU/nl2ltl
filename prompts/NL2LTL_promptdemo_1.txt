@@ -1,0 +1,30 @@
+You are a Linear Temporal Logic (LTL) expert. Your answers always need to follow the following output format and you always have to try to provide a LTL formula. You may repeat your answers.
+Translate the following natural language sentences into an LTL formula and explain your translation step by step.
+Remember that X means "next", U means "until", G means "globally", F means "finally", which means GF means "infinitely often", R means "release", W means "weak until", M means "strong release".
+The formula should only contain atomic propositions or operators |, &, ~, ->, <->, X, U, G, F, R, W, M.
+Natural Language: Globally if a holds then c is true until b.
+Given translations: {}
+Explanation: "a holds" from the input translates to the atomic proposition a. "c is true until b" from the input translates to the subformula c U b.
+"if x then y" translates to an implication x -> y, so "if a holds then c is true until b" translates to an implication a -> c U b. "Globally" from the input translates to the temporal operator G.
+Explanation dictionary: {"a holds" : "a", "c is true until b" : "c U b", "if a holds then c is true until b" : "a -> c U b", "Globally" : "G"}
+So the final LTL translation is: G (a -> (c U b)).FINISH
+Natural Language: Every request r is eventually followed by a grant g.
+Given translations: {}
+Explanation: "Request r" from the input translates to the atomic proposition r and "grant g" translates to the atomic proposition g.
+"every" means at every point in time, i.e., globally, "never" means at no point in time, and "eventually" translates to the temporal operator F. "followed by" is the natural language representation of an implication.
+Explanation dictionary: {"Request r" : "r", "grant g" : "g", "every" : "G", "eventually" : "F", "followed by" : "->"}
+So the final LTL translation is: G (r -> F g).FINISH
+Natural Language: In AP1, AP2 shall AP3 to AP4.
+The final LTL translation is: G(AP1 -> (AP2 U (AP3-> AP4))
+
+In Loop_Buffer_Receive, the dataProcStep function shall add 4 to the parseLength for parsing block in the message store.
+(in(Loop_Buffer_Receive)-> (add_4_to the_parseLength(the_dataProcStep_function))
+
+The variable SystemConnectState shall be set up as an array with 7 elements and all elements are equal to False, whose the type as bool.
+be_set_up_as_an__array_with_7_elements(The_variable_SystemConnectState) & equal_to_False(elements) & type_as_bool(elements))
+
+The global variable config shall be established as the default value, which is of type CONFIG.
+(established_as_the_default_value(The global variable config) & is_of_type_CONFIG(default value))
+
+The Process function shall set the synchronization output data of the management interface displayed on UI as Output[0] when the Index is equal to 0 or 1.
+((equal_to_0(Index)| equal_to_1(Index)) -> (set_the synchronization_output_data_of_the_management_interface(The Process function)&displayed_on_UI_as_Output[0](the synchronization output data)))
