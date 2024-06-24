@@ -2,12 +2,14 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import openai
 from openai import OpenAI
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 # 设置OpenAI API密钥
-
+keyfile = os.path.join(os.path.pardir, "keys\\kimi.txt")
+key = open(keyfile).readline().strip("\n")  # 从keyfile中读取API密钥, 此处为kimi
 
 client = OpenAI(
     api_key=key,
